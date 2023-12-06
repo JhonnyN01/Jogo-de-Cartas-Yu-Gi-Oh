@@ -1,8 +1,10 @@
+/* para criar um padrão onde todos os navegadores vão partir do ponto zero. */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
   font-family: "Press Start 2P", cursive;
-  user-select: none;
+  user-select: none; /*para o usuario nao conseguir selecionar as caoisas da tela */
 }

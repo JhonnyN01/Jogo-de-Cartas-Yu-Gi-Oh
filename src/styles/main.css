@@ -1,0 +1,160 @@
+body {
+    cursor: url("../assets/cursor/yugicursor.png"), default;
+}
+
+button,
+a,
+img:hover,
+button:hover,
+a:hover {
+    cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+}
+
+.bg-video {
+    position: absolute; /* para munipular o video*/
+    z-index: -2; /*a ideia eh jogar o video para tras (mexe com profundidade)*/
+    width: 100vw; /*ocupar 100% de largura*/
+    height: 100vh; /*ocupar 100% da janela de visualizacao*/
+    overflow: hidden; /*qualquer que sobrepor no video ficara escondido.*/
+    display: flex; /**/
+    justify-content: center; /*estara justificando o video ao centro junto com display: flex;*/
+}
+
+
+.bg-video .video {
+    height: 100vh;
+    
+}
+
+/* colocando efeito mais opaco para o video aparecer menos que os elementos*/
+.bg-video::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+/* container principal */
+.container {
+    position: relative;
+    z-index: 3; /*profundidade*/
+    display: flex;
+    height: 100vh;
+}
+
+.container__left {
+    width: 35%;
+    min-width: 300px; /*determina que o quadro nao ser menor que 300*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;  
+}
+
+.container__right {
+    width: 65%; /*estica o painel das cartas */
+
+}
+
+.score_box {
+    background-color: #fff;
+    padding: 30px;
+
+}
+/* insere uma borda ao redor do 1 primeiro quadrado */
+.frame {
+    border: 3px solid #000;
+    border-radius: 5px; /*arredonda os cantinhos do quadrado.*/
+}
+
+/* detalhes da carta */
+.card_details {
+    background-color: #fff;
+    padding: 1rem; /*deixa unidade de medida mais responsiva.*/
+    display: flex; /*para sempre alinhar os elementos*/
+    flex-direction:  column; /*faz os elementos ficarem um encima do outro em formato de coluna*/
+    align-items: center;
+    justify-content: space-between;
+    height: 6rem;
+    width: 100%;
+}
+
+/* alterando o tamanho das fontes */
+#card-name {
+    font-size: 0.8rem;
+}
+
+#card-type {
+    font-size: 1rem;
+}
+
+.card-box__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.3rem; /*da distancia entre o topo e base dos elementos*/
+}
+
+.card-versus__container {    
+    
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
+    padding-top: 0.1rem;
+    height: 300px;
+}
+
+.versus-top,
+.versus-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.versus-bottom {
+    margin-top: 1rem;
+}
+
+#next-duel {
+    display: none;
+}
+
+.card-box {
+    height: 9rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-infield {
+    height: 11.2rem;
+    width: 8rem;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+
+.card {
+    transition: transform 0.2s;
+
+}
+
+.card:hover {
+    transform: scale(1.2);
+
+}
+
+.debug {
+
+}
